@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Assignment 6</title>
+</head>
+ 
+<body>
+
+<h2>Painter entry Tagore Charith Chepuri</h2>
+
+<form>
+    <label for="form1_password">The hidden Painter name</label>
+    <input type ="password" id="form1_password" name="form1_password" min=10 max=50 step=2 value="Monet"> <br>
+
+    <label for="form1_guess">Guess the hidden Painter</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <button type="button" onclick="checkPainter()" value="Check the guess input">Submit</button>
+</form>
+
+
+<p id="result">This results will be replaced </p>
+
+<script> 
+good=0
+let oops=0
+function checkPainter(){
+    console.log("Getting form values")
+    password = document.getElementById("form1_password").value
+    guess = document.getElementById("form1_guess").value
+    confirmed = confirm("Are these the values? "+password+" and "+guess)
+    
+    out = document.getElementById("result")
+    if(password==guess){
+        alert("You got i right")
+        good=good+1
+        out.innerHTML = "Correct guess: "+good+" wrong guess: "+oops;
+    } else {
+        alert("Sorry")
+        oops=oops+1
+        out.innerHTML = "Correct guess: "+good+" wrong guess: "+oops;
+    }
+}
+</script>
+
+</body>
+</html> 
